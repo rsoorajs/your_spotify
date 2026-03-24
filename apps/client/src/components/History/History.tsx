@@ -30,6 +30,7 @@ export default function History() {
   const { items, hasMore, onNext } = useInfiniteScroll(
     followInterval ? interval : allInterval,
     api.getTracks,
+    item => !!item.track,
   );
 
   const handleSetFollowInterval = (value: boolean) => {

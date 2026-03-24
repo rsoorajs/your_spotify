@@ -27,6 +27,7 @@ export default function Songs() {
   const { items, hasMore, onNext } = useInfiniteScroll(
     interval,
     api.getBestSongs,
+    item => !!item.track,
   );
 
   const context: PlaylistContext = {
